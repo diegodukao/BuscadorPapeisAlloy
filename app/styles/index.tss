@@ -1,0 +1,96 @@
+".container": {
+	backgroundColor:"white"
+},
+"#label_min": {
+	top: '1%',
+	left: '35%',
+	color: "black"
+} ,
+"#label_max": {
+	top: '1%',
+	left: '73%',
+	color: "black"
+} ,
+"#label_pl": {
+	top: '11%',
+	left: '5%',
+	color: "black"
+} ,
+"#label_roe": {
+	top: '21%',
+	left: '5%',
+	color: "black"
+} ,
+"#label_divptr": {
+	top: '31%',
+	left: '5%',
+	color: "black"
+},
+
+
+"#pl_min": {
+	color : 'black',
+	top : '7%',
+	left : '25%',
+	width : '30%',
+	height : 'auto',
+	keyboardType : Ti.UI.KEYBOARD_DECIMAL_PAD
+},
+"#pl_max": {
+	color : 'black',
+	top : '7%',
+	left : '63%',
+	width : '30%',
+	height : 'auto',
+	keyboardType : Ti.UI.KEYBOARD_DECIMAL_PAD
+},
+
+"#roe_min": {
+	color : 'black',
+	top : '17%',
+	left : '25%',
+	width : '30%',
+	height : 'auto',
+	keyboardType : Ti.UI.KEYBOARD_DECIMAL_PAD
+},
+
+"#roe_max": {
+	color : 'black',
+	top : '17%',
+	left : '63%',
+	width : '30%',
+	height : 'auto',
+	keyboardType : Ti.UI.KEYBOARD_DECIMAL_PAD
+},
+
+"#divptr_min": {
+	color : 'black',
+	top : '27%',
+	left : '25%',
+	width : '30%',
+	height : 'auto',
+	keyboardType : Ti.UI.KEYBOARD_DECIMAL_PAD
+},
+
+"#divptr_max": {
+	color : 'black',
+	top : '27%',
+	left : '63%',
+	width : '30%',
+	height : 'auto',
+	keyboardType : Ti.UI.KEYBOARD_DECIMAL_PAD
+},
+
+
+"#btn_limpar": {
+	title : 'Limpar',
+	top : '37%',
+	left : '7%',
+	width : '23%'
+},
+
+"#btn_buscar": {
+	top : '37%',
+	left : '70%',
+	width : '23%'
+},
