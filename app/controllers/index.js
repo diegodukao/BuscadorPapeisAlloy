@@ -26,8 +26,8 @@ function search(e) {
                 
                 data.push(resultItem);
 			};
-			
 			$.view.hide();
+			$.resultTable.show();
 			$.resultTable.setData(data);
 			// var ResultWindow = require("ui/ResultWindow");
 			// var resultWindow = new ResultWindow({
@@ -45,3 +45,4 @@ function search(e) {
 };
 
 $.index.open();
+$.resultTable.hide();

@@ -19,7 +19,7 @@ function Controller() {
                     }).getView();
                     data.push(resultItem);
                 }
-                $.view.hide();
+                $.resultTable.show();
                 $.resultTable.setData(data);
             } catch (e) {
                 alert("Error: " + e);
@@ -35,10 +35,6 @@ function Controller() {
         id: "index"
     });
     $.addTopLevelView($.__views.index);
-    $.__views.resultTable = Ti.UI.createTableView({
-        id: "resultTable"
-    });
-    $.__views.index.add($.__views.resultTable);
     $.__views.view = Ti.UI.createView({
         id: "view"
     });
@@ -161,9 +157,14 @@ function Controller() {
     });
     $.__views.view.add($.__views.btn_buscar);
     search ? $.__views.btn_buscar.addEventListener("click", search) : __defers["$.__views.btn_buscar!click!search"] = !0;
+    $.__views.resultTable = Ti.UI.createTableView({
+        id: "resultTable"
+    });
+    $.__views.index.add($.__views.resultTable);
     exports.destroy = function() {};
     _.extend($, $.__views);
     $.index.open();
+    $.resultTable.hide();
     __defers["$.__views.btn_limpar!click!cleanFields"] && $.__views.btn_limpar.addEventListener("click", cleanFields);
     __defers["$.__views.btn_buscar!click!search"] && $.__views.btn_buscar.addEventListener("click", search);
     _.extend($, exports);

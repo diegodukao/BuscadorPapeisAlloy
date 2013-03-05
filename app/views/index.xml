@@ -1,6 +1,5 @@
 <Alloy>
 	<Window class="container">
-		<TableView id='resultTable'></TableView>
 		<View id="view">
 			<Label id="label_min">Min</Label>
 			<Label id="label_max">Max</Label>
@@ -18,5 +17,6 @@
 			<Button id="btn_limpar" onClick="cleanFields">Limpar</Button>
 			<Button id="btn_buscar" onClick="search">Buscar</Button>
 		</View>
+		<TableView id='resultTable'></TableView>
 	</Window>
 </Alloy>
