@@ -94,3 +94,7 @@
 	left : '70%',
 	width : '23%'
 },
+
+"#result": {
+	hidden: true
+},

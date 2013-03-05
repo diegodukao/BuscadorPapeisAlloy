@@ -1,7 +1,4 @@
 function Controller() {
-    function doClick(e) {
-        alert($.label.text);
-    }
     function cleanFields(e) {
         $.pl_min.value = "";
         $.pl_max.value = "";
@@ -9,6 +6,26 @@ function Controller() {
         $.roe_max.value = "";
         $.divptr_min.value = "";
         $.divptr_max.value = "";
+    }
+    function search(e) {
+        var xhr = Ti.Network.createHTTPClient();
+        xhr.open("GET", "https://buscadorpapeis-prospeccaohtml5.rhcloud.com/buscadorpapeis/rest/papeis/buscar?plMin=0&plMax=25&roeMin=0.09&divBrutaMax=0.20");
+        xhr.onload = function() {
+            try {
+                var papeis = JSON.parse(this.responseText), data = [];
+                for (var i = 0; i < papeis.length; i++) {
+                    var papel = papeis[i], resultItem = Alloy.createController("resultItem", {
+                        title: papel.nome + ": R$ " + papel.cotacaoAtual
+                    }).getView();
+                    data.push(resultItem);
+                }
+                $.view.hide();
+                $.resultTable.setData(data);
+            } catch (e) {
+                alert("Error: " + e);
+            }
+        };
+        xhr.send();
     }
     require("alloy/controllers/BaseController").apply(this, Array.prototype.slice.call(arguments));
     $model = arguments[0] ? arguments[0].$model : null;
@@ -18,6 +35,10 @@ function Controller() {
         id: "index"
     });
     $.addTopLevelView($.__views.index);
+    $.__views.resultTable = Ti.UI.createTableView({
+        id: "resultTable"
+    });
+    $.__views.index.add($.__views.resultTable);
     $.__views.view = Ti.UI.createView({
         id: "view"
     });
@@ -139,10 +160,12 @@ function Controller() {
         id: "btn_buscar"
     });
     $.__views.view.add($.__views.btn_buscar);
+    search ? $.__views.btn_buscar.addEventListener("click", search) : __defers["$.__views.btn_buscar!click!search"] = !0;
     exports.destroy = function() {};
     _.extend($, $.__views);
     $.index.open();
     __defers["$.__views.btn_limpar!click!cleanFields"] && $.__views.btn_limpar.addEventListener("click", cleanFields);
+    __defers["$.__views.btn_buscar!click!search"] && $.__views.btn_buscar.addEventListener("click", search);
     _.extend($, exports);
 }
 

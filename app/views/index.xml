@@ -1,5 +1,6 @@
 <Alloy>
 	<Window class="container">
+		<TableView id='resultTable'></TableView>
 		<View id="view">
 			<Label id="label_min">Min</Label>
 			<Label id="label_max">Max</Label>
@@ -15,7 +16,7 @@
 			<TextField id="divptr_max"></TextField>
 			
 			<Button id="btn_limpar" onClick="cleanFields">Limpar</Button>
-			<Button id="btn_buscar">Buscar</Button>
+			<Button id="btn_buscar" onClick="search">Buscar</Button>
 		</View>
 	</Window>
 </Alloy>
