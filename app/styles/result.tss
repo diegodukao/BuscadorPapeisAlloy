@@ -1,0 +1,5 @@
+".container": {
+	backgroundColor: "white",
+	exitOnClose: false,
+	navBarHidden : false
+}

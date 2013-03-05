@@ -19,8 +19,8 @@ function Controller() {
                     }).getView();
                     data.push(resultItem);
                 }
-                $.resultTable.show();
-                $.resultTable.setData(data);
+                var resultWindow = Alloy.createController("result", data).getView();
+                resultWindow.open();
             } catch (e) {
                 alert("Error: " + e);
             }
@@ -157,14 +157,9 @@ function Controller() {
     });
     $.__views.view.add($.__views.btn_buscar);
     search ? $.__views.btn_buscar.addEventListener("click", search) : __defers["$.__views.btn_buscar!click!search"] = !0;
-    $.__views.resultTable = Ti.UI.createTableView({
-        id: "resultTable"
-    });
-    $.__views.index.add($.__views.resultTable);
     exports.destroy = function() {};
     _.extend($, $.__views);
     $.index.open();
-    $.resultTable.hide();
     __defers["$.__views.btn_limpar!click!cleanFields"] && $.__views.btn_limpar.addEventListener("click", cleanFields);
     __defers["$.__views.btn_buscar!click!search"] && $.__views.btn_buscar.addEventListener("click", search);
     _.extend($, exports);
