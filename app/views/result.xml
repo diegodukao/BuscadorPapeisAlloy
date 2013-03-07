@@ -1,5 +1,12 @@
 <Alloy>
     <Window id="resultWin" exitOnClose="false" class="container">
 		<TableView id='resultTable'></TableView>
+    	<View id="header">
+			<Label id="nome" class="title">Papel</Label>
+			<Label id="precoSobreLucro" class="title">P/L</Label>
+			<Label id="retornoSobrePatrimonio" class="title">ROE</Label>
+			<Label id="dividaBrutaSobrePatrimonio" class="title">Div/Ptr</Label>
+			<Label id="patrimonioLiquido" class="title">Patr.</Label>
+    	</View>
     </Window>
 </Alloy>

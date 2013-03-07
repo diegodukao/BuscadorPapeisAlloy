@@ -10,7 +10,7 @@ function InitAdapter(config) {
     throw "localStorage persistence supported only with MobileWeb.";
 }
 
-function Sync(method, model, opts) {
+function Sync(model, method, opts) {
     function storeModel(data) {
         localStorage.setItem(name, JSON.stringify(data));
     }
@@ -48,7 +48,7 @@ function Sync(method, model, opts) {
     if (resp) {
         _.isFunction(opts.success) && opts.success(resp);
         method === "read" && model.trigger("fetch");
-    } else _.isFunction(opts.error) && opts.error(resp);
+    } else _.isFunction(opts.error) && opts.error("Record not found");
 }
 
 var _ = require("alloy/underscore")._;

@@ -1,9 +1,9 @@
-#appname: BuscadorPapeisAlloy
-#appid: net.diegodukao.buscadorpapeisalloy
-#type: mobile
-#guid: 740dab5b-61e2-4ad4-bacb-19c11d243e51
-#version: 1.0
-#publisher: not specified
-#url: not specified
-#image: appicon.png
-#desc: not specified
+#appname:BuscadorPapeisAlloy
+#appid:net.diegodukao.buscadorpapeisalloy
+#type:ipad
+#guid:740dab5b-61e2-4ad4-bacb-19c11d243e51
+#version:1.0
+#publisher:diego
+#url:http://
+#image:appicon.png
+#desc:not specified

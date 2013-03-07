@@ -1,5 +1,9 @@
 <Alloy>
     <TableViewRow id="row">
-		<Label id="title"/>
+		<Label id="nome" class="labelResult"/>
+		<Label id="precoSobreLucro" class="labelResult"/>
+		<Label id="retornoSobrePatrimonio" class="labelResult"/>
+		<Label id="dividaBrutaSobrePatrimonio" class="labelResult"/>
+		<Label id="patrimonioLiquido" class="labelResult"/>
     </TableViewRow>
 </Alloy>

@@ -1,3 +1,29 @@
 ".container": {
 	backgroundColor: "white"
+},
+".labelResult": {
+	font: {
+        fontSize: '10dp',
+    }
+},
+"#nome" : {
+	width: "25%",
+	left: "0%",
+},
+"#precoSobreLucro" : {
+	width: "15%",
+	left: "25%"
+},
+"#retornoSobrePatrimonio" : {
+	width: "20%",
+	left: "40%"
+},
+"#dividaBrutaSobrePatrimonio" : {
+	width: "15%",
+	left: "60%"
+},
+"#patrimonioLiquido" : {
+	width: "25%",
+	left: "75%",
+	textAlign: Ti.UI.TEXT_ALIGNMENT_RIGHT
 }

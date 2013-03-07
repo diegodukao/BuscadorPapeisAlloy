@@ -1,5 +1,44 @@
 ".container": {
 	backgroundColor: "white",
 	exitOnClose: false,
-	navBarHidden : false
+	navBarHidden : false,
+},
+".title": {
+	font: {
+        fontSize: '12dp',
+    }
+},
+"#header" : {
+	top: "0",
+	height: "30px",
+	backgroundColor: "gray"
+},
+"#resultTable" : {
+	top: "30px",
+},
+"#nome" : {
+	width: "25%",
+	left: "0%",
+	color: "black"
+},
+"#precoSobreLucro" : {
+	width: "15%",
+	left: "25%",
+	color: "black"
+},
+"#retornoSobrePatrimonio" : {
+	width: "20%",
+	left: "40%",
+	color: "black"
+},
+"#dividaBrutaSobrePatrimonio" : {
+	width: "15%",
+	left: "60%",
+	color: "black"
+},
+"#patrimonioLiquido" : {
+	width: "25%",
+	left: "75%",
+	color: "black",
+	textAlign: Ti.UI.TEXT_ALIGNMENT_RIGHT
 }

@@ -5,17 +5,19 @@
 			<Label id="label_max">Max</Label>
 			<Label id="label_pl">P/L</Label>
 			<Label id="label_roe">ROE</Label>
-			<Label id="label_divptr">ROE</Label>
+			<Label id="label_divptr">Div/Ptr</Label>
 			
-			<TextField id="pl_min"></TextField>
-			<TextField id="pl_max"></TextField>
-			<TextField id="roe_min"></TextField>
-			<TextField id="roe_max"></TextField>
-			<TextField id="divptr_min"></TextField>
-			<TextField id="divptr_max"></TextField>
+			<TextField id="pl_min" onEnter="dismissKeyboard" onChange="validateNumber"></TextField>
+			<TextField id="pl_max" onEnter="dismissKeyboard" onChange="validateNumber"></TextField>
+			<TextField id="roe_min" onEnter="dismissKeyboard" onChange="validateNumber"></TextField>
+			<TextField id="roe_max" onEnter="dismissKeyboard" onChange="validateNumber"></TextField>
+			<TextField id="divptr_min" onEnter="dismissKeyboard" onChange="validateNumber"></TextField>
+			<TextField id="divptr_max" onEnter="dismissKeyboard" onChange="validateNumber"></TextField>
 			
 			<Button id="btn_limpar" onClick="cleanFields">Limpar</Button>
 			<Button id="btn_buscar" onClick="search">Buscar</Button>
+			
+			<ActivityIndicator id="loading">Carregando...</ActivityIndicator>
 		</View>
 	</Window>
 </Alloy>
