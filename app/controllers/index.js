@@ -41,9 +41,9 @@ function validateNumber(e)
 {
 	Ti.API.info("validateNumber: " + e.value) ;
 	if ( ! isNumber(e.value) ) {
-		e.source.backgroundColor = "red" ;
+		e.source.color = "red" ;
 	} else {
-		e.source.backgroundColor = "white" ;
+		e.source.color = "black" ;
 	}
 }
 
@@ -131,5 +131,5 @@ if ( iOS ) {
 		}
 	}
 	nav = new WindowOpener() ;
-	nav.open($.index) ;
+	$.index.open() ;
 }

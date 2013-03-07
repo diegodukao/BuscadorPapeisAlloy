@@ -26,7 +26,7 @@ function Controller() {
     }
     function validateNumber(e) {
         Ti.API.info("validateNumber: " + e.value);
-        isNumber(e.value) ? e.source.backgroundColor = "white" : e.source.backgroundColor = "red";
+        isNumber(e.value) ? e.source.color = "black" : e.source.color = "red";
     }
     function search(e) {
         if (!isNumber($.pl_min.value) || !isNumber($.pl_max.value) || !isNumber($.roe_min.value) || !isNumber($.roe_max.value) || !isNumber($.divptr_min.value) || !isNumber($.divptr_max.value)) {
@@ -245,7 +245,7 @@ function Controller() {
             };
         };
         nav = new WindowOpener;
-        nav.open($.index);
+        $.index.open();
     }
     __defers["$.__views.pl_min!enter!dismissKeyboard"] && $.__views.pl_min.on("enter", dismissKeyboard);
     __defers["$.__views.pl_min!change!validateNumber"] && $.__views.pl_min.on("change", validateNumber);
