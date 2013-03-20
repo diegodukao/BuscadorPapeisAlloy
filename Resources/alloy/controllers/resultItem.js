@@ -12,28 +12,35 @@ function Controller() {
     }
     function openGraph(e) {
         Ti.API.info("Click: " + JSON.stringify(e));
-        Ti.API.info("nav = " + JSON.stringify(nav));
-        var graphWindow = Alloy.createController("graph", {}).getView();
+        var graphWindow = Alloy.createController("graph", {
+            nomePapel: "WHRL4"
+        }).getView();
         nav.open(graphWindow);
     }
     require("alloy/controllers/BaseController").apply(this, Array.prototype.slice.call(arguments));
     $model = arguments[0] ? arguments[0].$model : null;
     var $ = this, exports = {}, __defers = {};
     $.__views.row = A$(Ti.UI.createTableViewRow({
+        height: "44px",
         id: "row"
     }), "TableViewRow", null);
     $.addTopLevelView($.__views.row);
-    openGraph ? $.__views.row.on("click", openGraph) : __defers["$.__views.row!click!openGraph"] = !0;
+    $.__views.bgView = A$(Ti.UI.createView({
+        id: "bgView"
+    }), "View", $.__views.row);
+    $.__views.row.add($.__views.bgView);
+    openGraph ? $.__views.bgView.on("click", openGraph) : __defers["$.__views.bgView!click!openGraph"] = !0;
     $.__views.nome = A$(Ti.UI.createLabel({
         font: {
             fontSize: "10dp",
             "undefined": undefined
         },
         width: "25%",
-        left: "0%",
-        id: "nome"
-    }), "Label", $.__views.row);
-    $.__views.row.add($.__views.nome);
+        left: "1%",
+        id: "nome",
+        touchEnabled: "false"
+    }), "Label", $.__views.bgView);
+    $.__views.bgView.add($.__views.nome);
     $.__views.precoSobreLucro = A$(Ti.UI.createLabel({
         font: {
             fontSize: "10dp",
@@ -41,9 +48,10 @@ function Controller() {
         },
         width: "15%",
         left: "25%",
-        id: "precoSobreLucro"
-    }), "Label", $.__views.row);
-    $.__views.row.add($.__views.precoSobreLucro);
+        id: "precoSobreLucro",
+        touchEnabled: "false"
+    }), "Label", $.__views.bgView);
+    $.__views.bgView.add($.__views.precoSobreLucro);
     $.__views.retornoSobrePatrimonio = A$(Ti.UI.createLabel({
         font: {
             fontSize: "10dp",
@@ -51,9 +59,10 @@ function Controller() {
         },
         width: "20%",
         left: "40%",
-        id: "retornoSobrePatrimonio"
-    }), "Label", $.__views.row);
-    $.__views.row.add($.__views.retornoSobrePatrimonio);
+        id: "retornoSobrePatrimonio",
+        touchEnabled: "false"
+    }), "Label", $.__views.bgView);
+    $.__views.bgView.add($.__views.retornoSobrePatrimonio);
     $.__views.dividaBrutaSobrePatrimonio = A$(Ti.UI.createLabel({
         font: {
             fontSize: "10dp",
@@ -61,20 +70,22 @@ function Controller() {
         },
         width: "15%",
         left: "60%",
-        id: "dividaBrutaSobrePatrimonio"
-    }), "Label", $.__views.row);
-    $.__views.row.add($.__views.dividaBrutaSobrePatrimonio);
+        id: "dividaBrutaSobrePatrimonio",
+        touchEnabled: "false"
+    }), "Label", $.__views.bgView);
+    $.__views.bgView.add($.__views.dividaBrutaSobrePatrimonio);
     $.__views.patrimonioLiquido = A$(Ti.UI.createLabel({
         font: {
             fontSize: "10dp",
             "undefined": undefined
         },
-        width: "25%",
+        width: "24%",
         left: "75%",
         textAlign: Ti.UI.TEXT_ALIGNMENT_RIGHT,
-        id: "patrimonioLiquido"
-    }), "Label", $.__views.row);
-    $.__views.row.add($.__views.patrimonioLiquido);
+        id: "patrimonioLiquido",
+        touchEnabled: "false"
+    }), "Label", $.__views.bgView);
+    $.__views.bgView.add($.__views.patrimonioLiquido);
     exports.destroy = function() {};
     _.extend($, $.__views);
     var args = arguments[0] || {};
@@ -84,7 +95,7 @@ function Controller() {
     $.dividaBrutaSobrePatrimonio.text = args.papel.dividaBrutaSobrePatrimonio || "";
     $.patrimonioLiquido.text = "R$ " + toHumanNumber(args.papel.patrimonioLiquido);
     var nav = args.nav;
-    __defers["$.__views.row!click!openGraph"] && $.__views.row.on("click", openGraph);
+    __defers["$.__views.bgView!click!openGraph"] && $.__views.bgView.on("click", openGraph);
     _.extend($, exports);
 }
 

@@ -27,7 +27,7 @@ function Controller() {
             "undefined": undefined
         },
         width: "25%",
-        left: "0%",
+        left: "1%",
         color: "black",
         text: "Papel",
         id: "nome"
@@ -74,7 +74,7 @@ function Controller() {
             fontSize: "12dp",
             "undefined": undefined
         },
-        width: "25%",
+        width: "24%",
         left: "75%",
         color: "black",
         textAlign: Ti.UI.TEXT_ALIGNMENT_RIGHT,

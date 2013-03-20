@@ -24,8 +24,6 @@ var nav = args.nav ;
 
 function openGraph(e) {
 	Ti.API.info("Click: " + JSON.stringify(e)) ;
-	Ti.API.info("nav = " + JSON.stringify(nav)) ;
-	var graphWindow = Alloy.createController('graph', {}).getView();
+	var graphWindow = Alloy.createController('graph', {nomePapel: "WHRL4"}).getView();
 	nav.open(graphWindow) ;
-	//graphWindow.open() ;
 }

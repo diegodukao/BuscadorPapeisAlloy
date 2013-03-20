@@ -219,7 +219,7 @@ function Controller() {
     $.__views.view.add($.__views.btn_buscar);
     search ? $.__views.btn_buscar.on("click", search) : __defers["$.__views.btn_buscar!click!search"] = !0;
     $.__views.loading = A$(Ti.UI.createActivityIndicator({
-        style: Ti.UI.iPhone.ActivityIndicatorStyle.DARK,
+        style: Ti.UI.ActivityIndicatorStyle.DARK,
         top: "50%",
         left: "50%",
         id: "loading"
@@ -227,7 +227,7 @@ function Controller() {
     $.__views.view.add($.__views.loading);
     exports.destroy = function() {};
     _.extend($, $.__views);
-    var iOS = !0, nav;
+    var iOS = !1, nav;
     $.loading.hide();
     if (iOS) {
         var newWindow = Titanium.UI.createWindow();

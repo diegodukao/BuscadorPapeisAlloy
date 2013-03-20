@@ -1,5 +1,5 @@
-".container": {
-	backgroundColor: "white"
+"#row": {
+	height: "44px"
 },
 ".labelResult": {
 	font: {
@@ -8,7 +8,7 @@
 },
 "#nome" : {
 	width: "25%",
-	left: "0%",
+	left: "1%",
 },
 "#precoSobreLucro" : {
 	width: "15%",
@@ -23,7 +23,7 @@
 	left: "60%"
 },
 "#patrimonioLiquido" : {
-	width: "25%",
+	width: "24%",
 	left: "75%",
 	textAlign: Ti.UI.TEXT_ALIGNMENT_RIGHT
 }

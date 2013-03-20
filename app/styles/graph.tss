@@ -1,3 +1,11 @@
 ".container": {
 	backgroundColor: "white"
-}
+},
+"#loading[platform=ios]": {
+    style: Ti.UI.iPhone.ActivityIndicatorStyle.DARK
+},
+"#loading": {
+    style: Ti.UI.ActivityIndicatorStyle.DARK,
+	top: "50%",
+	left: "50%"
+},

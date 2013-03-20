@@ -1,9 +1,11 @@
 <Alloy>
-    <TableViewRow id="row" onClick="openGraph">
-		<Label id="nome" class="labelResult"/>
-		<Label id="precoSobreLucro" class="labelResult"/>
-		<Label id="retornoSobrePatrimonio" class="labelResult"/>
-		<Label id="dividaBrutaSobrePatrimonio" class="labelResult"/>
-		<Label id="patrimonioLiquido" class="labelResult"/>
+    <TableViewRow id="row">
+    	<View id="bgView" onClick="openGraph">
+			<Label id="nome" class="labelResult" touchEnabled="false" />
+			<Label id="precoSobreLucro" class="labelResult" touchEnabled="false" />
+			<Label id="retornoSobrePatrimonio" class="labelResult" touchEnabled="false" />
+			<Label id="dividaBrutaSobrePatrimonio" class="labelResult" touchEnabled="false" />
+			<Label id="patrimonioLiquido" class="labelResult" touchEnabled="false" />
+    	</View>
     </TableViewRow>
 </Alloy>
