@@ -1,5 +1,5 @@
 "#row": {
-	height: "44px"
+	height: "44dip"
 },
 ".labelResult": {
 	font: {

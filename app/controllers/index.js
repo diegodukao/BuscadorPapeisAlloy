@@ -98,9 +98,8 @@ function search(e) {
 		}
 	} ;
 	xhr.onerror = function(e) {
-		Ti.API.info(JSON.stringify(this));
-		alert("Erro de conexão: " + this.status) ;
-		setScreenEnable(true) ;
+		Ti.API.info(JSON.stringify(e));
+		alert("Erro de conexão: " + e) ;
 	} ;
 	//xhr.setRequestHeader("Content-Type", "application/json-rpc");
 	xhr.open("GET", url);

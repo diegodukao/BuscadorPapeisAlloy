@@ -21,7 +21,7 @@ function Controller() {
     $model = arguments[0] ? arguments[0].$model : null;
     var $ = this, exports = {}, __defers = {};
     $.__views.row = A$(Ti.UI.createTableViewRow({
-        height: "44px",
+        height: "44dip",
         id: "row"
     }), "TableViewRow", null);
     $.addTopLevelView($.__views.row);

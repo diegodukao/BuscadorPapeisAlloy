@@ -3,10 +3,8 @@ function Controller() {
         var url = "http://buscadorgraficos-prospeccaohtml5.rhcloud.com/buscadorgraficos/rest/papeis/buscar?dataInicial=01/20/2010&dataFinal=01/02/2013&nomePapel=" + nomePapel, xhr = Ti.Network.createHTTPClient();
         Ti.API.info(url);
         xhr.onload = function() {
-            $.loading.hide();
             try {
                 $.webview.evalJS("loadData(" + this.responseText + ")");
-                $.loading.hide();
             } catch (e) {
                 alert("Erro ao atualizar dados do gráfico: " + e);
                 nav.close($);
@@ -14,7 +12,7 @@ function Controller() {
         };
         xhr.onerror = function(e) {
             alert("Erro de conexão: " + this.status);
-            nav.close($.window);
+            $.loading.hide();
         };
         xhr.open("GET", url);
         Ti.API.info("Chamando request...");
@@ -42,6 +40,9 @@ function Controller() {
     $.__views.graph.add($.__views.loading);
     exports.destroy = function() {};
     _.extend($, $.__views);
+    Ti.App.addEventListener("app:chartLoaded", function(e) {
+        $.loading.hide();
+    });
     var args = arguments[0], nomePapel = args.nomePapel;
     $.loading.show();
     $.webview.url = "/etc/graph.html";

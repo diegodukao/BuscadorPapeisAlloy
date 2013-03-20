@@ -12,7 +12,12 @@
 			// create the chart
 			chart = new Highcharts.StockChart({
 				chart : {
-					renderTo : 'container'
+					renderTo : 'container',
+			        events: {
+			        	load: function() {
+			        		Ti.App.fireEvent('app:chartLoaded', { });
+			        	}
+			        }
 				},
 			
 				rangeSelector : {
@@ -20,12 +25,12 @@
 				},
 			
 				title : {
-					text : 'AAPL Stock Price'
+					text : 'Stock Price'
 				},
 			
 				series : [{
 					type : 'candlestick',
-					name : 'AAPL Stock Price',
+					name : 'Stock Price',
 					data : data,
 					dataGrouping : {
 						units : [

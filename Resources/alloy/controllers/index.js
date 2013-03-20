@@ -62,9 +62,8 @@ function Controller() {
             }
         };
         xhr.onerror = function(e) {
-            Ti.API.info(JSON.stringify(this));
-            alert("Erro de conexão: " + this.status);
-            setScreenEnable(!0);
+            Ti.API.info(JSON.stringify(e));
+            alert("Erro de conexão: " + e);
         };
         xhr.open("GET", url);
         Ti.API.info("Chamando request...");

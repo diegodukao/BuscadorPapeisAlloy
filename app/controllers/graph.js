@@ -4,10 +4,8 @@ function doneLoading(e) {
 	Ti.API.info(url) ;
 	
 	xhr.onload = function() {
-		$.loading.hide() ;
 		try {
 			$.webview.evalJS("loadData(" + this.responseText + ")") ;
-			$.loading.hide() ;
 		} catch(e) {
 			//Ti.API.info(JSON.stringify(e));
 			alert("Erro ao atualizar dados do gráfico: " + e) ;
@@ -17,13 +15,17 @@ function doneLoading(e) {
 	xhr.onerror = function(e) {
 		//Ti.API.info(JSON.stringify(this));
 		alert("Erro de conexão: " + this.status) ;
-		nav.close($.window) ;
+		$.loading.hide() ;
 	} ;
 	//xhr.setRequestHeader("Content-Type", "application/json-rpc");
 	xhr.open("GET", url);
 	Ti.API.info("Chamando request...") ;
 	xhr.send();
 }
+
+Ti.App.addEventListener('app:chartLoaded', function(e) {
+	$.loading.hide() ;
+});
 
 var args = arguments[0];
 var nomePapel = args.nomePapel ;
