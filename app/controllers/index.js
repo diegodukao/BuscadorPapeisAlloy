@@ -83,7 +83,8 @@ function search(e) {
 				var papel = papeis[i];
 				
 				var resultItem = Alloy.createController('resultItem', {
-					papel: papel
+					papel: papel,
+					nav: nav
                 }).getView();
                 
                 data.push(resultItem);

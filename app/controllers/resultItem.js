@@ -20,3 +20,12 @@ $.precoSobreLucro.text = args.papel.precoSobreLucro || '';
 $.retornoSobrePatrimonio.text = (args.papel.retornoSobrePatrimonio || '') + "%";
 $.dividaBrutaSobrePatrimonio.text = args.papel.dividaBrutaSobrePatrimonio || '';
 $.patrimonioLiquido.text = "R$ " + toHumanNumber(args.papel.patrimonioLiquido);
+var nav = args.nav ;
+
+function openGraph(e) {
+	Ti.API.info("Click: " + JSON.stringify(e)) ;
+	Ti.API.info("nav = " + JSON.stringify(nav)) ;
+	var graphWindow = Alloy.createController('graph', {}).getView();
+	nav.open(graphWindow) ;
+	//graphWindow.open() ;
+}

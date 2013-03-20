@@ -1,5 +1,5 @@
 <Alloy>
-    <TableViewRow id="row">
+    <TableViewRow id="row" onClick="openGraph">
 		<Label id="nome" class="labelResult"/>
 		<Label id="precoSobreLucro" class="labelResult"/>
 		<Label id="retornoSobrePatrimonio" class="labelResult"/>

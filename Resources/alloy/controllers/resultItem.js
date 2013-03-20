@@ -10,6 +10,12 @@ function Controller() {
         var s = [ "", "mil", "MI", "BI", "TRI", "QUA", "QUI" ], e = Math.floor(Math.log(currency) / Math.log(1000));
         return (sign * currency / Math.pow(1000, e)).toFixed(1) + s[e];
     }
+    function openGraph(e) {
+        Ti.API.info("Click: " + JSON.stringify(e));
+        Ti.API.info("nav = " + JSON.stringify(nav));
+        var graphWindow = Alloy.createController("graph", {}).getView();
+        nav.open(graphWindow);
+    }
     require("alloy/controllers/BaseController").apply(this, Array.prototype.slice.call(arguments));
     $model = arguments[0] ? arguments[0].$model : null;
     var $ = this, exports = {}, __defers = {};
@@ -17,6 +23,7 @@ function Controller() {
         id: "row"
     }), "TableViewRow", null);
     $.addTopLevelView($.__views.row);
+    openGraph ? $.__views.row.on("click", openGraph) : __defers["$.__views.row!click!openGraph"] = !0;
     $.__views.nome = A$(Ti.UI.createLabel({
         font: {
             fontSize: "10dp",
@@ -76,6 +83,8 @@ function Controller() {
     $.retornoSobrePatrimonio.text = (args.papel.retornoSobrePatrimonio || "") + "%";
     $.dividaBrutaSobrePatrimonio.text = args.papel.dividaBrutaSobrePatrimonio || "";
     $.patrimonioLiquido.text = "R$ " + toHumanNumber(args.papel.patrimonioLiquido);
+    var nav = args.nav;
+    __defers["$.__views.row!click!openGraph"] && $.__views.row.on("click", openGraph);
     _.extend($, exports);
 }
 
