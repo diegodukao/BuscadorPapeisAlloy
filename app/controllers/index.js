@@ -123,9 +123,9 @@ if ( iOS ) {
 	var WindowOpener = function() {
 		this.open = function(win, args) {
 			if ( ! args ) {
-				args = {fullscreen:true} ;
+				args = {navBarHidden:false} ;
 			} else {
-				args.fullscreen = true ;
+				args.navBarHidden = false ;
 			}
 			win.open(args) ;
 		}

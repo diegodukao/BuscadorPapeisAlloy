@@ -1,6 +1,6 @@
 <Alloy>
     <Window class="container">
 		<WebView id="webview" onLoad="doneLoading"></WebView>
-		<ActivityIndicator id="loading">Carregando...</ActivityIndicator>
+		<ActivityIndicator id="loading" message="Carregando..."></ActivityIndicator>
 	</Window>
 </Alloy>

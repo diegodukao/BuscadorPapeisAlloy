@@ -238,8 +238,8 @@ function Controller() {
     } else {
         var WindowOpener = function() {
             this.open = function(win, args) {
-                args ? args.fullscreen = !0 : args = {
-                    fullscreen: !0
+                args ? args.navBarHidden = !1 : args = {
+                    navBarHidden: !1
                 };
                 win.open(args);
             };
