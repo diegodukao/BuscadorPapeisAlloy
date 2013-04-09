@@ -1,0 +1,7 @@
+<Alloy>
+	<Window class="container">
+		<View id="view">
+			<Button id="btn_camera" onClick="viewCamera">Câmera</Button>
+		</View>
+	</Window>
+</Alloy>

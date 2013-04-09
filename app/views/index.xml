@@ -1,11 +1,11 @@
 <Alloy>
 	<Window class="container">
 		<View id="view">
-			<Label id="label_min">Min</Label>
-			<Label id="label_max">Max</Label>
-			<Label id="label_pl">P/L</Label>
-			<Label id="label_roe">ROE</Label>
-			<Label id="label_divptr">Div/Ptr</Label>
+			<Label id="label_min" class="labelInicial">Min</Label>
+			<Label id="label_max" class="labelInicial">Max</Label>
+			<Label id="label_pl" class="labelInicial">P/L</Label>
+			<Label id="label_roe" class="labelInicial">ROE</Label>
+			<Label id="label_divptr" class="labelInicial">Div/Ptr</Label>
 			
 			<TextField id="pl_min" onEnter="dismissKeyboard" onChange="validateNumber"></TextField>
 			<TextField id="pl_max" onEnter="dismissKeyboard" onChange="validateNumber"></TextField>
@@ -16,6 +16,7 @@
 			
 			<Button id="btn_limpar" onClick="cleanFields">Limpar</Button>
 			<Button id="btn_buscar" onClick="search">Buscar</Button>
+			<Button id="btn_demo" onClick="demo">Demo</Button>
 			
 			<ActivityIndicator id="loading">Carregando...</ActivityIndicator>
 		</View>

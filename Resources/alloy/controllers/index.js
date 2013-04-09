@@ -69,6 +69,12 @@ function Controller() {
         Ti.API.info("Chamando request...");
         xhr.send();
     }
+    function demo(e) {
+        var demoWindow = Alloy.createController("demo", {
+            nav: nav
+        }).getView();
+        nav.open(demoWindow);
+    }
     require("alloy/controllers/BaseController").apply(this, Array.prototype.slice.call(arguments));
     $model = arguments[0] ? arguments[0].$model : null;
     var $ = this, exports = {}, __defers = {};
@@ -82,41 +88,56 @@ function Controller() {
     }), "View", $.__views.index);
     $.__views.index.add($.__views.view);
     $.__views.label_min = A$(Ti.UI.createLabel({
+        color: "black",
+        font: {
+            fontSize: "10pt"
+        },
         top: "1%",
         left: "35%",
-        color: "black",
         text: "Min",
         id: "label_min"
     }), "Label", $.__views.view);
     $.__views.view.add($.__views.label_min);
     $.__views.label_max = A$(Ti.UI.createLabel({
+        color: "black",
+        font: {
+            fontSize: "10pt"
+        },
         top: "1%",
         left: "73%",
-        color: "black",
         text: "Max",
         id: "label_max"
     }), "Label", $.__views.view);
     $.__views.view.add($.__views.label_max);
     $.__views.label_pl = A$(Ti.UI.createLabel({
+        color: "black",
+        font: {
+            fontSize: "10pt"
+        },
         top: "8%",
         left: "5%",
-        color: "black",
         text: "P/L",
         id: "label_pl"
     }), "Label", $.__views.view);
     $.__views.view.add($.__views.label_pl);
     $.__views.label_roe = A$(Ti.UI.createLabel({
+        color: "black",
+        font: {
+            fontSize: "10pt"
+        },
         top: "18%",
         left: "5%",
-        color: "black",
         text: "ROE",
         id: "label_roe"
     }), "Label", $.__views.view);
     $.__views.view.add($.__views.label_roe);
     $.__views.label_divptr = A$(Ti.UI.createLabel({
+        color: "black",
+        font: {
+            fontSize: "10pt"
+        },
         top: "28%",
         left: "5%",
-        color: "black",
         text: "Div/Ptr",
         id: "label_divptr"
     }), "Label", $.__views.view);
@@ -217,6 +238,15 @@ function Controller() {
     }), "Button", $.__views.view);
     $.__views.view.add($.__views.btn_buscar);
     search ? $.__views.btn_buscar.on("click", search) : __defers["$.__views.btn_buscar!click!search"] = !0;
+    $.__views.btn_demo = A$(Ti.UI.createButton({
+        top: "70%",
+        left: "70%",
+        width: "23%",
+        title: "Demo",
+        id: "btn_demo"
+    }), "Button", $.__views.view);
+    $.__views.view.add($.__views.btn_demo);
+    demo ? $.__views.btn_demo.on("click", demo) : __defers["$.__views.btn_demo!click!demo"] = !0;
     $.__views.loading = A$(Ti.UI.createActivityIndicator({
         style: Ti.UI.ActivityIndicatorStyle.DARK,
         top: "50%",
@@ -261,6 +291,7 @@ function Controller() {
     __defers["$.__views.divptr_max!change!validateNumber"] && $.__views.divptr_max.on("change", validateNumber);
     __defers["$.__views.btn_limpar!click!cleanFields"] && $.__views.btn_limpar.on("click", cleanFields);
     __defers["$.__views.btn_buscar!click!search"] && $.__views.btn_buscar.on("click", search);
+    __defers["$.__views.btn_demo!click!demo"] && $.__views.btn_demo.on("click", demo);
     _.extend($, exports);
 }
 

@@ -107,6 +107,11 @@ function search(e) {
 	xhr.send();
 };
 
+function demo(e) {
+	var demoWindow = Alloy.createController('demo', {nav:nav}).getView();
+	nav.open(demoWindow) ;
+}
+
 // Configura o loading
 $.loading.hide() ;
 
