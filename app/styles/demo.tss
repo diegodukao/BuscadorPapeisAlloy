@@ -5,4 +5,14 @@
 	width: "25%",
 	left: "10%",
 	top: "10%"
+},
+"#btn_verfoto": {
+	width: "25%",
+	left: "45%",
+	top: "10%"
+},
+"#btn_ouvirMusica": {
+	width: "25%",
+	left: "10%",
+	top: "25%"
 }

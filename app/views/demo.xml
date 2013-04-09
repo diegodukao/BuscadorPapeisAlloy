@@ -2,6 +2,8 @@
 	<Window class="container">
 		<View id="view">
 			<Button id="btn_camera" onClick="viewCamera">Câmera</Button>
+			<Button id="btn_verfoto" onClick="viewPhoto">Ver foto</Button>
+			<Button id="btn_ouvirMusica" onClick="listenMusic">Ouvir música</Button>
 		</View>
 	</Window>
 </Alloy>

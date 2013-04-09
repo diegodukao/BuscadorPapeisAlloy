@@ -38,4 +38,30 @@ function viewCamera(e) {
 	    },
 	    allowEditing:true
 	});
+};
+
+function viewPhoto(e) {
+	$.btn_verfoto.enabled = false ;
+	$.btn_camera.enabled = false ;
+	try {
+	    var f = Titanium.Filesystem.getFile(Titanium.Filesystem.applicationDataDirectory,'camera_photo.png');
+	    var image = f.read();
+	    Ti.UI.backgroundColor = 'white';
+		var win = Ti.UI.createWindow();
+		var image = Ti.UI.createImageView({
+		  image:image.nativePath
+		});
+		win.add(image);
+		nav.open(win);
+	} catch(e) {
+		alert("Erro ao abrir arquivo de foto") ;
+	} finally {
+		$.btn_verfoto.enabled = true ;
+		$.btn_camera.enabled = true ;
+	}
+}
+
+function listenMusic(e) {
+	var player = Ti.Media.createSound({url:"/etc/music.mp3"});
+	player.play();
 }

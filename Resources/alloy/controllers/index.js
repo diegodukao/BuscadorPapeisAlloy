@@ -89,9 +89,6 @@ function Controller() {
     $.__views.index.add($.__views.view);
     $.__views.label_min = A$(Ti.UI.createLabel({
         color: "black",
-        font: {
-            fontSize: "10pt"
-        },
         top: "1%",
         left: "35%",
         text: "Min",
@@ -100,9 +97,6 @@ function Controller() {
     $.__views.view.add($.__views.label_min);
     $.__views.label_max = A$(Ti.UI.createLabel({
         color: "black",
-        font: {
-            fontSize: "10pt"
-        },
         top: "1%",
         left: "73%",
         text: "Max",
@@ -111,9 +105,6 @@ function Controller() {
     $.__views.view.add($.__views.label_max);
     $.__views.label_pl = A$(Ti.UI.createLabel({
         color: "black",
-        font: {
-            fontSize: "10pt"
-        },
         top: "8%",
         left: "5%",
         text: "P/L",
@@ -122,9 +113,6 @@ function Controller() {
     $.__views.view.add($.__views.label_pl);
     $.__views.label_roe = A$(Ti.UI.createLabel({
         color: "black",
-        font: {
-            fontSize: "10pt"
-        },
         top: "18%",
         left: "5%",
         text: "ROE",
@@ -133,9 +121,6 @@ function Controller() {
     $.__views.view.add($.__views.label_roe);
     $.__views.label_divptr = A$(Ti.UI.createLabel({
         color: "black",
-        font: {
-            fontSize: "10pt"
-        },
         top: "28%",
         left: "5%",
         text: "Div/Ptr",
@@ -248,7 +233,7 @@ function Controller() {
     $.__views.view.add($.__views.btn_demo);
     demo ? $.__views.btn_demo.on("click", demo) : __defers["$.__views.btn_demo!click!demo"] = !0;
     $.__views.loading = A$(Ti.UI.createActivityIndicator({
-        style: Ti.UI.ActivityIndicatorStyle.DARK,
+        style: Ti.UI.iPhone.ActivityIndicatorStyle.DARK,
         top: "50%",
         left: "50%",
         id: "loading"
@@ -256,7 +241,7 @@ function Controller() {
     $.__views.view.add($.__views.loading);
     exports.destroy = function() {};
     _.extend($, $.__views);
-    var iOS = !1, nav;
+    var iOS = !0, nav;
     $.loading.hide();
     if (iOS) {
         var newWindow = Titanium.UI.createWindow();

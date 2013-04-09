@@ -39,7 +39,7 @@ function Controller() {
     $.__views.graph.add($.__views.webview);
     doneLoading ? $.__views.webview.on("load", doneLoading) : __defers["$.__views.webview!load!doneLoading"] = !0;
     $.__views.loading = A$(Ti.UI.createActivityIndicator({
-        style: Ti.UI.ActivityIndicatorStyle.DARK,
+        style: Ti.UI.iPhone.ActivityIndicatorStyle.DARK,
         top: "50%",
         left: "10%",
         id: "loading",
